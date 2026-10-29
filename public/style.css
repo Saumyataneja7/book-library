@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --background: #f8f5ef;
+  --surface: #ffffff;
+  --text: #292720;
+  --muted: #79766e;
+  --accent: #b85f43;
+  --accent-dark: #91452f;
+  --border: #e8e1d7;
+  --green: #3f795b;
+  --shadow: 0 8px 28px rgba(45, 38, 27, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.header {
+  padding: 48px 0 42px;
+  background: #eee5d8;
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: -1.5px;
+}
+
+.header p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 30px 0;
+}
+
+.stat-card,
+.form-section,
+.library-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.stat-card {
+  padding: 22px;
+}
+
+.stat-card h2 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+.stat-card p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.form-section,
+.library-section {
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.form-section h2,
+.library-section h2 {
+  margin: 0 0 22px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.7rem;
+}
+
+#book-form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(184, 95, 67, 0.12);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 9px;
+  background: var(--accent);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+#book-form button {
+  margin-top: 10px;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.book-card {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fffdf9;
+}
+
+.book-card h3 {
+  margin: 0 0 5px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.book-author {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.book-description {
+  color: #555149;
+  overflow-wrap: anywhere;
+}
+
+.book-meta {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.book-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.book-actions button {
+  padding: 9px 12px;
+  font-size: 0.85rem;
+}
+
+.book-actions .secondary {
+  background: #eee8de;
+  color: var(--text);
+}
+
+.book-actions .danger {
+  background: #f7e7e3;
+  color: #963d2b;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.status.read {
+  background: #e3efe6;
+  color: var(--green);
+}
+
+.status.unread {
+  background: #f6ead8;
+  color: #986328;
+}
+
+#message {
+  color: var(--muted);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 40px 20px;
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .header {
+    padding: 34px 0;
+  }
+
+  .stats {
+    gap: 9px;
+  }
+
+  .stat-card {
+    padding: 14px 10px;
+  }
+
+  .stat-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-section,
+  .library-section {
+    padding: 20px;
+  }
+
+  .toolbar,
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+}

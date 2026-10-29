@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Book Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>My Book Library</h1>
+      <p>Your personal space for every book you read.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <div class="stat-card">
+        <h2 id="total-count">0</h2>
+        <p>Total Books</p>
+      </div>
+      <div class="stat-card">
+        <h2 id="read-count">0</h2>
+        <p>Books Read</p>
+      </div>
+      <div class="stat-card">
+        <h2 id="unread-count">0</h2>
+        <p>To Read</p>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h2>Add a New Book</h2>
+
+      <form id="book-form">
+        <label for="title">Book Title</label>
+        <input id="title" name="title" type="text" required>
+
+        <label for="author">Author</label>
+        <input id="author" name="author" type="text" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="3" required></textarea>
+
+        <label for="status">Reading Status</label>
+        <select id="status" name="status">
+          <option value="unread">Unread</option>
+          <option value="read">Read</option>
+        </select>
+
+        <button type="submit">Add Book</button>
+      </form>
+    </section>
+
+    <section class="library-section">
+      <h2>Your Collection</h2>
+
+      <div class="toolbar">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search by title or author..."
+        >
+
+        <select id="filter">
+          <option value="all">All Books</option>
+          <option value="read">Read</option>
+          <option value="unread">Unread</option>
+        </select>
+      </div>
+
+      <p id="message" role="status" aria-live="polite"></p>
+      <div id="book-list" class="book-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
